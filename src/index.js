@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import FormikApp from './App';
 import * as serviceWorker from './serviceWorker';
+import Yup from 'yup';
 
-ReactDOM.render(<FormikApp email="test@email.com" />, document.getElementById('root'));
+ReactDOM.render(<FormikApp />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
