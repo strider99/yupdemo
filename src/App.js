@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {withFormik,Form,Field} from 'formik';
-import Yup from 'yup';
+import * as Yup from 'yup';
 
 class App extends Component {
 
   render() {
-    const {values,errors} = this.props;
+    const {values, errors, touched} = this.props;
     return (
       <Form>
         <div>
-          {errors.email && <p>errors.email</p>}
+          {touched.email && errors.email && <p>{errors.email}</p>}
         <Field type="email" name="email" placeholder="Email" />
-
         </div>
-        <Field type="password" name="password" placeholder="password" />
+        <div>
+          {touched.password  && errors.password && <p>{errors.password}</p>}
+          <Field type="password" name="password" placeholder="password" />
+        </div>
         <label>
 
         <Field type="checkbox" name="newsletter" checked={values.newsletter} />
